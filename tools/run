@@ -1,0 +1,9 @@
+#!/bin/bash
+
+pushd work
+
+xmverilog -compile ../src/*.v
+xmverilog -compile ../tb/*.v
+xmverilog +gui +access+r -timescale 1ns/1ps ../tb/$1.v
+
+popd

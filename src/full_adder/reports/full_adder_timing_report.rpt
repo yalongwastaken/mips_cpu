@@ -1,0 +1,138 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 5
+        -max_paths 5
+        -sort_by group
+Design : full_adder
+Version: O-2018.06-SP1
+Date   : Mon Feb 10 13:45:05 2025
+****************************************
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: a (input port)
+  Endpoint: cout (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                    0.000      0.000 f
+  a (in)                                  0.000      0.000 f
+  U6/Y (INVX2)                            0.050      0.050 r
+  U7/Y (INVX2)                            0.115      0.164 f
+  ha1/a (half_adder_1)                    0.000      0.164 f
+  ha1/U2/Y (XOR2X1)                       0.265      0.429 f
+  ha1/sum (half_adder_1)                  0.000      0.429 f
+  ha2/b (half_adder_0)                    0.000      0.429 f
+  ha2/U1/Y (AND2X2)                       0.221      0.650 f
+  ha2/cout (half_adder_0)                 0.000      0.650 f
+  U1/Y (OR2X1)                            0.351      1.000 f
+  cout (out)                              0.000      1.000 f
+  data arrival time                                  1.000
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: a (input port)
+  Endpoint: cout (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                    0.000      0.000 r
+  a (in)                                  0.000      0.000 r
+  U6/Y (INVX2)                            0.057      0.057 f
+  U7/Y (INVX2)                            0.105      0.163 r
+  ha1/a (half_adder_1)                    0.000      0.163 r
+  ha1/U2/Y (XOR2X1)                       0.264      0.427 f
+  ha1/sum (half_adder_1)                  0.000      0.427 f
+  ha2/b (half_adder_0)                    0.000      0.427 f
+  ha2/U1/Y (AND2X2)                       0.221      0.648 f
+  ha2/cout (half_adder_0)                 0.000      0.648 f
+  U1/Y (OR2X1)                            0.351      0.998 f
+  cout (out)                              0.000      0.998 f
+  data arrival time                                  0.998
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: b (input port)
+  Endpoint: cout (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                    0.000      0.000 f
+  b (in)                                  0.000      0.000 f
+  U4/Y (INVX2)                            0.050      0.050 r
+  U5/Y (INVX2)                            0.105      0.155 f
+  ha1/b (half_adder_1)                    0.000      0.155 f
+  ha1/U2/Y (XOR2X1)                       0.235      0.390 f
+  ha1/sum (half_adder_1)                  0.000      0.390 f
+  ha2/b (half_adder_0)                    0.000      0.390 f
+  ha2/U1/Y (AND2X2)                       0.221      0.611 f
+  ha2/cout (half_adder_0)                 0.000      0.611 f
+  U1/Y (OR2X1)                            0.351      0.961 f
+  cout (out)                              0.000      0.961 f
+  data arrival time                                  0.961
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: b (input port)
+  Endpoint: cout (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                    0.000      0.000 r
+  b (in)                                  0.000      0.000 r
+  U4/Y (INVX2)                            0.057      0.057 f
+  U5/Y (INVX2)                            0.097      0.154 r
+  ha1/b (half_adder_1)                    0.000      0.154 r
+  ha1/U2/Y (XOR2X1)                       0.235      0.390 f
+  ha1/sum (half_adder_1)                  0.000      0.390 f
+  ha2/b (half_adder_0)                    0.000      0.390 f
+  ha2/U1/Y (AND2X2)                       0.221      0.610 f
+  ha2/cout (half_adder_0)                 0.000      0.610 f
+  U1/Y (OR2X1)                            0.351      0.961 f
+  cout (out)                              0.000      0.961 f
+  data arrival time                                  0.961
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: a (input port)
+  Endpoint: cout (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                    0.000      0.000 f
+  a (in)                                  0.000      0.000 f
+  U6/Y (INVX2)                            0.050      0.050 r
+  U7/Y (INVX2)                            0.115      0.164 f
+  ha1/a (half_adder_1)                    0.000      0.164 f
+  ha1/U2/Y (XOR2X1)                       0.266      0.430 r
+  ha1/sum (half_adder_1)                  0.000      0.430 r
+  ha2/b (half_adder_0)                    0.000      0.430 r
+  ha2/U1/Y (AND2X2)                       0.162      0.592 r
+  ha2/cout (half_adder_0)                 0.000      0.592 r
+  U1/Y (OR2X1)                            0.358      0.950 r
+  cout (out)                              0.000      0.950 r
+  data arrival time                                  0.950
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

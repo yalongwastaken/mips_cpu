@@ -1,0 +1,1 @@
+This directory contains all the necessary scripts to compile, run, and synthesize the created Verilog designs. Additionally, there is a template file directory used for development, providing foundational resources for building and modifying the designs.

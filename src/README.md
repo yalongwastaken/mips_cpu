@@ -1,0 +1,1 @@
+This directory contains all the developed Verilog files for the project, along with timing reports for each design.
