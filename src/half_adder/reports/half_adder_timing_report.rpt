@@ -1,0 +1,108 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 5
+        -max_paths 5
+        -sort_by group
+Design : half_adder
+Version: O-2018.06-SP1
+Date   : Tue Feb 11 13:57:16 2025
+****************************************
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: a (input port)
+  Endpoint: sum (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                    0.000      0.000 f
+  a (in)                                  0.000      0.000 f
+  U5/Y (INVX2)                            0.050      0.050 r
+  U6/Y (INVX2)                            0.115      0.164 f
+  U2/Y (XOR2X1)                           0.306      0.470 r
+  sum (out)                               0.000      0.470 r
+  data arrival time                                  0.470
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: a (input port)
+  Endpoint: sum (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                    0.000      0.000 r
+  a (in)                                  0.000      0.000 r
+  U5/Y (INVX2)                            0.057      0.057 f
+  U6/Y (INVX2)                            0.105      0.163 r
+  U2/Y (XOR2X1)                           0.306      0.468 r
+  sum (out)                               0.000      0.468 r
+  data arrival time                                  0.468
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: a (input port)
+  Endpoint: sum (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                    0.000      0.000 f
+  a (in)                                  0.000      0.000 f
+  U5/Y (INVX2)                            0.050      0.050 r
+  U6/Y (INVX2)                            0.115      0.164 f
+  U2/Y (XOR2X1)                           0.302      0.467 f
+  sum (out)                               0.000      0.467 f
+  data arrival time                                  0.467
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: a (input port)
+  Endpoint: sum (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                    0.000      0.000 r
+  a (in)                                  0.000      0.000 r
+  U5/Y (INVX2)                            0.057      0.057 f
+  U6/Y (INVX2)                            0.105      0.163 r
+  U2/Y (XOR2X1)                           0.302      0.465 f
+  sum (out)                               0.000      0.465 f
+  data arrival time                                  0.465
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: a (input port)
+  Endpoint: cout (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                    0.000      0.000 f
+  a (in)                                  0.000      0.000 f
+  U5/Y (INVX2)                            0.050      0.050 r
+  U6/Y (INVX2)                            0.115      0.164 f
+  U1/Y (AND2X2)                           0.286      0.451 f
+  cout (out)                              0.000      0.451 f
+  data arrival time                                  0.451
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

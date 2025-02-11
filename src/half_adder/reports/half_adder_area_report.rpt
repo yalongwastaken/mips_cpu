@@ -1,0 +1,43 @@
+ 
+****************************************
+Report : area
+Design : half_adder
+Version: O-2018.06-SP1
+Date   : Tue Feb 11 13:57:16 2025
+****************************************
+
+Library(s) Used:
+
+    osu05_stdcells (File: /apps/design_kits/osu_stdcells_v2p7/synopsys/lib/ami05/osu05_stdcells.db)
+
+Number of ports:                            4
+Number of nets:                             8
+Number of cells:                            6
+Number of combinational cells:              6
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                          4
+Number of references:                       3
+
+Combinational area:               1368.000000
+Buf/Inv area:                      576.000000
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                  1368.000000
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  ---------
+half_adder                        1368.0000    100.0  1368.0000     0.0000  0.0000  half_adder
+--------------------------------  ---------  -------  ---------  ---------  ------  ---------
+Total                                                 1368.0000     0.0000  0.0000
+
+1
