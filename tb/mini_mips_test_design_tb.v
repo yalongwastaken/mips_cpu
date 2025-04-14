@@ -9,9 +9,6 @@ module mini_mips_testbench;
     wire memwrite;
     wire [7:0] adr;
     wire [7:0] writedata;
-    wire [5:0] op;
-    wire [5:0] funct;
-    wire zero;
 
     // Instantiate the mini_mips module
     mini_mips_test_design uut (
@@ -20,10 +17,7 @@ module mini_mips_testbench;
         .memdata(memdata),
         .memwrite(memwrite),
         .adr(adr),
-        .writedata(writedata),
-        .op(op),
-        .funct(funct),
-        .zero(zero)
+        .writedata(writedata)
     );
 
     // Clock generation
@@ -116,8 +110,8 @@ module mini_mips_testbench;
     end
 
     initial begin
-        $monitor("Time: %t | memwrite: %b | adr: %h | writedata: %h | memdata: %b | op: %h | funct: %h | zero: %b",
-                 $time, memwrite, adr, writedata, memdata, op, funct, zero);
+        $monitor("Time: %t | memwrite: %b | adr: %h | writedata: %h | memdata: %b",
+                 $time, memwrite, adr, writedata, memdata);
     end
 
 endmodule

@@ -1,6 +1,6 @@
 `timescale 1ns/10ps
 
-module datapath(
+module datapath_full_design(
     input wire clk,
     input wire pcen,
     input wire iord,

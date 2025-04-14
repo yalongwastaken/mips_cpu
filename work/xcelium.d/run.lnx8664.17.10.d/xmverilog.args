@@ -2,16 +2,8 @@
 // File created by:  xmverilog
 // Do not modify this file
 //
--compile
-../src/alu.v
-../src/alucontrol.v
-../src/controller.v
-../src/datapath.v
-../src/flop.v
-../src/flop_en.v
-../src/instr_data_memory.v
-../src/mini_mips.v
-../src/mux2.v
-../src/mux3.v
-../src/mux4.v
-../src/register_file.v
++gui
++access+r
+-timescale
+1ns/1ps
+../tb/mini_mips_test_design_tb.v

@@ -1,6 +1,6 @@
 `timescale 1ns/10ps
 
-module datapath(
+module datapath_test_design(
     input wire clk,
     input wire pcen,
     input wire iord,
@@ -21,7 +21,7 @@ module datapath(
 );
 
     // Internal signals
-    wire [7:0] pc, pcnext, memdata, data, a;
+    wire [7:0] pc, pcnext, data, a;
     wire [7:0] aluout, aluout_flop, aluin1, aluin2, wd, rd1, rd2;
     wire [4:0] wa;
     reg  [31:0] instr;

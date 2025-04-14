@@ -2,11 +2,14 @@
 // File created by:  xmverilog
 // Do not modify this file
 //
++gui
++access+r
+-gui
 -MESSAGES
 +EMGRLOG
 xmverilog.log
 -XLSTIME
-1744646136
+1744660503
 -XLKEEP
 -XLMODE
 ./xcelium.d/run.lnx8664.17.10.d
@@ -20,4 +23,4 @@ xmverilog
 -XLVERSION
 "TOOL:	xmverilog	17.10-s001"
 -XLNAME
-./xcelium.d/run.lnx8664.17.10.d/shell_182325
+./xcelium.d/run.lnx8664.17.10.d/shell_114719

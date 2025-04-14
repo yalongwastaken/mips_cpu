@@ -6699,3 +6699,4 @@ source -echo -verbose /home/ead/bsirota/ece4150/mips_cpu/work/../syn/synthesis.t
 #@ echo "Synthesis Complete"
 #@ # -- End source /home/ead/bsirota/ece4150/mips_cpu/work/../syn/synthesis.tcl
 
+exit
