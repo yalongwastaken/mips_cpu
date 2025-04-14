@@ -14,15 +14,19 @@ module datapath(
     input wire [2:0] alucont,
     input wire [1:0] pcsource,
     output reg [5:0] op,
-    output reg [5:0] funct
+    output reg [5:0] funct,
+    output wire zero,
+    output wire [7:0] addr,
+    output wire [7:0] wdata
 );
 
     // Internal signals
-    wire [7:0] pc, pcnext, addr, memdata, data, a, wdata;
-    wire [7:0] aluout, aluout_flop, aluin1, aluin2, wd, wa, rd1, rd2;
+    wire [7:0] pc, pcnext, memdata, data, a;
+    wire [7:0] aluout, aluout_flop, aluin1, aluin2, wd, rd1, rd2;
+    wire [4:0] wa;
     reg  [31:0] instr;
     wire [7:0] imm = instr[7:0];
-    wire [9:0] immx4 = {instr[7:0], 2'b00};
+    wire [7:0] immx4 = {instr[5:0], 2'b00};
 
     // PC Register
     flop_en pc_flop(.clk(clk), .en(pcen), .d(pcnext), .q(pc));
@@ -35,8 +39,8 @@ module datapath(
         .clk(clk),
         .memwrite(memwrite),
         .addr(addr),
-        .wdata(wdata),
-        .rdata(memdata)
+        .data_in(wdata),
+        .data_out(memdata)
     );
 
     // Instruction Register (4 bytes)
@@ -51,11 +55,11 @@ module datapath(
     flop memdata_flop(.clk(clk), .d(memdata), .q(data));
 
     // MUXes for register file inputs
-    mux2 mux2_a3(.a(instr[20:16]), .b(instr[15:11]), .sel(regdst), .y(wa));
+    mux2 #(.DATA_WIDTH(5)) mux2_a3(.a(instr[20:16]), .b(instr[15:11]), .sel(regdst), .y(wa));
     mux2 mux2_w3(.a(aluout), .b(data), .sel(memtoreg), .y(wd));
 
     // Register File
-    regfile regfile(
+    register_file regfile(
         .clk(clk),
         .regwrite(regwrite),
         .ra1(instr[25:21]),
@@ -75,10 +79,10 @@ module datapath(
     mux4 mux4_b(.a(wdata), .b(8'b00000001), .c(imm), .d(immx4[7:0]), .sel(alusrcb), .y(aluin2));
 
     // ALU
-    alu alu(.alucont(alucont), .a(aluin1), .b(aluin2), .aluout(aluout));
+    alu alu(.alucont(alucont), .a(aluin1), .b(aluin2), .aluout(aluout), .zero(zero));
 
     // ALUOUT flop
-    flop aluout_flop(.clk(clk), .d(aluout), .q(aluout_flop));
+    flop aluout_flopp(.clk(clk), .d(aluout), .q(aluout_flop));
 
     // Next PC selection
     mux3 mux3_pc(.a(aluout), .b(aluout_flop), .c(immx4), .sel(pcsource), .y(pcnext));

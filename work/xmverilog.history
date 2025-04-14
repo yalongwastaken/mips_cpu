@@ -1,0 +1,8 @@
+s1(14Apr2025:11:38:24):  xmverilog -compile ../src/alu.v ../src/alucontrol.v ../src/controller.v ../src/datapath.v ../src/flop.v ../src/flop_en.v ../src/instr_data_memory.v ../src/mini_mips.v ../src/mux2.v ../src/mux3.v ../src/mux4.v ../src/register_file.v 
+s2(14Apr2025:11:38:25):  xmverilog -compile ../tb/*.v 
+s3(14Apr2025:11:39:34):  xmverilog -compile ../src/alu.v ../src/alucontrol.v ../src/controller.v ../src/datapath.v ../src/flop.v ../src/flop_en.v ../src/instr_data_memory.v ../src/mini_mips.v ../src/mux2.v ../src/mux3.v ../src/mux4.v ../src/register_file.v 
+s4(14Apr2025:11:39:34):  xmverilog -compile ../tb/*.v 
+s5(14Apr2025:11:53:23):  xmverilog -compile ../src/alu.v ../src/alucontrol.v ../src/controller.v ../src/datapath.v ../src/flop.v ../src/flop_en.v ../src/instr_data_memory.v ../src/mini_mips.v ../src/mux2.v ../src/mux3.v ../src/mux4.v ../src/register_file.v 
+s6(14Apr2025:11:53:24):  xmverilog -compile ../tb/*.v 
+s7(14Apr2025:11:55:36):  xmverilog -compile ../src/alu.v ../src/alucontrol.v ../src/controller.v ../src/datapath.v ../src/flop.v ../src/flop_en.v ../src/instr_data_memory.v ../src/mini_mips.v ../src/mux2.v ../src/mux3.v ../src/mux4.v ../src/register_file.v 
+s8(14Apr2025:11:55:36):  xmverilog -compile ../tb/*.v 

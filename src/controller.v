@@ -46,14 +46,14 @@ reg [3:0] state, nextstate;
 reg [1:0] aluop;
 
 // ALU CONTROL
-alucontrol alucont(
+alucontrol alucontt(
     .aluop(aluop),
     .funct(funct),
     .alucont(alucont)
 );
 
 // state register logic
-always @(posedge clk) begin
+always @(posedge clk or posedge reset) begin
     if (reset) begin
         state <= FETCH1;
     end 
@@ -64,36 +64,38 @@ end
 
 // next state logic
 always @(*) begin
+    nextstate = state;
+
     case (state)
-        FETCH1: nextstate <= FETCH2;
-        FETCH2: nextstate <= FETCH3;
-        FETCH3: nextstate <= FETCH4;
-        FETCH4: nextstate <= DECODE;
+        FETCH1: nextstate = FETCH2;
+        FETCH2: nextstate = FETCH3;
+        FETCH3: nextstate = FETCH4;
+        FETCH4: nextstate = DECODE;
         DECODE: begin
             case (op)
-                LB: nextstate <= MEMADR;
-                SB: nextstate <= MEMADR;
-                RTYPE: nextstate <= RTYPEEX;
-                BEQ: nextstate <= BEQEX;
-                J: nextstate <= JEX;
-                default: nextstate <= FETCH1; // Default to fetch if invalid opcode
+                LB: nextstate = MEMADR;
+                SB: nextstate = MEMADR;
+                RTYPE: nextstate = RTYPEEX;
+                BEQ: nextstate = BEQEX;
+                J: nextstate = JEX;
+                default: nextstate = FETCH1; // Default to fetch if invalid opcode
             endcase
         end
         MEMADR: begin
             case (op)
-                LB: nextstate <= LBRD;
-                SB: nextstate <= SBWR;
-                default: nextstate <= FETCH1; // Default to fetch if invalid opcode
+                LB: nextstate = LBRD;
+                SB: nextstate = SBWR;
+                default: nextstate = FETCH1; // Default to fetch if invalid opcode
             endcase
         end
-        LBRD: nextstate <= LBWR;
-        LBWR: nextstate <= FETCH1;
-        SBWR: nextstate <= FETCH1;
-        RTYPEEX: nextstate <= RTYPEWR;
-        RTYPEWR: nextstate <= FETCH1;
-        BEQEX: nextstate <= FETCH1;
-        JEX: nextstate <= FETCH1;
-        default: nextstate <= FETCH1; // Default to fetch if invalid state
+        LBRD: nextstate = LBWR;
+        LBWR: nextstate = FETCH1;
+        SBWR: nextstate = FETCH1;
+        RTYPEEX: nextstate = RTYPEWR;
+        RTYPEWR: nextstate = FETCH1;
+        BEQEX: nextstate = FETCH1;
+        JEX: nextstate = FETCH1;
+        default: nextstate = FETCH1; // Default to fetch if invalid state
     endcase
 end
 

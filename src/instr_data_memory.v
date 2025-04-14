@@ -9,11 +9,6 @@ module mem(
 );
     reg [7:0] memory [255:0];  // 256 x 8-bit memory
 
-    // TODO
-    initial begin
-        // Example: memory[0] = 8'hFF;
-    end
-
     // Synchronous read and write
     always @(posedge clk) begin
         if (memwrite) begin

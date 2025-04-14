@@ -1,0 +1,16 @@
+//
+// File created by:  xmverilog
+// Do not modify this file
+//
+/home/ead/bsirota/ece4150/mips_cpu/src/alu.v
+/home/ead/bsirota/ece4150/mips_cpu/src/alucontrol.v
+/home/ead/bsirota/ece4150/mips_cpu/src/controller.v
+/home/ead/bsirota/ece4150/mips_cpu/src/datapath.v
+/home/ead/bsirota/ece4150/mips_cpu/src/flop.v
+/home/ead/bsirota/ece4150/mips_cpu/src/flop_en.v
+/home/ead/bsirota/ece4150/mips_cpu/src/instr_data_memory.v
+/home/ead/bsirota/ece4150/mips_cpu/src/mini_mips.v
+/home/ead/bsirota/ece4150/mips_cpu/src/mux2.v
+/home/ead/bsirota/ece4150/mips_cpu/src/mux3.v
+/home/ead/bsirota/ece4150/mips_cpu/src/mux4.v
+/home/ead/bsirota/ece4150/mips_cpu/src/register_file.v

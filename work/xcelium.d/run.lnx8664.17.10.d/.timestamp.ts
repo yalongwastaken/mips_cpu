@@ -1,0 +1,12 @@
+1744644387 /home/ead/bsirota/ece4150/mips_cpu/src/flop.v
+1744644798 /home/ead/bsirota/ece4150/mips_cpu/src/instr_data_memory.v
+1744644387 /home/ead/bsirota/ece4150/mips_cpu/src/flop_en.v
+1744645133 /home/ead/bsirota/ece4150/mips_cpu/src/controller.v
+1744644387 /home/ead/bsirota/ece4150/mips_cpu/src/register_file.v
+1744646130 /home/ead/bsirota/ece4150/mips_cpu/src/mini_mips.v
+1744644387 /home/ead/bsirota/ece4150/mips_cpu/src/alu.v
+1744645658 /home/ead/bsirota/ece4150/mips_cpu/src/datapath.v
+1744644387 /home/ead/bsirota/ece4150/mips_cpu/src/mux4.v
+1744644387 /home/ead/bsirota/ece4150/mips_cpu/src/mux3.v
+1744644387 /home/ead/bsirota/ece4150/mips_cpu/src/mux2.v
+1744644387 /home/ead/bsirota/ece4150/mips_cpu/src/alucontrol.v

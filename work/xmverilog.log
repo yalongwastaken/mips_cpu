@@ -1,0 +1,7 @@
+xmverilog(64): 17.10-s001: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
+TOOL:	xmverilog	17.10-s001: Started on Apr 14, 2025 at 11:55:36 EDT
+xmverilog
+	-compile
+	../tb/*.v
+xmverilog: *E,FILEMIS: Cannot find the provided file ../tb/*.v.
+TOOL:	xmverilog	17.10-s001: Exiting on Apr 14, 2025 at 11:55:36 EDT  (total: 00:00:00)

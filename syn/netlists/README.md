@@ -1,1 +1,1 @@
-Netlists Director
+Netlists Directory

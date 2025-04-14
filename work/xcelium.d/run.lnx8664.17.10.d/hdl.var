@@ -1,0 +1,5 @@
+define XMSIMRC	( /apps/vlsi_2018/cadence/XCELIUM1710/tools/xcelium/files/xmsimrc, ~/.xmsimrc )
+include ./hdlrun.var
+define SNAPSHOT worklib.mini_mips:v
+DEFINE RUNMODEDEFAULT 1
+DEFINE LIB_MAP ( + => worklib )
