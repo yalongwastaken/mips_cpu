@@ -1,9 +1,0 @@
-//
-// File created by:  xmverilog
-// Do not modify this file
-//
-+gui
-+access+r
--timescale
-1ns/1ps
-../tb/mini_mips_test_design_tb.v
