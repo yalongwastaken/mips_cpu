@@ -14,7 +14,7 @@ module mini_mips_testbench;
     wire zero;
 
     // Instantiate the mini_mips module
-    mini_mips uut (
+    mini_mips_test_design uut (
         .clk(clk),
         .reset(reset),
         .memdata(memdata),
