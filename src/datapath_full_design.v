@@ -30,7 +30,7 @@ module datapath_full_design(
     wire [7:0] immx4 = {instr[5:0], 2'b00};
 
     // PC Register
-    flop_en pc_flop(.clk(clk), .reset(reset) .en(pcen), .d(pcnext), .q(pc));
+    flop_en pc_flop(.clk(clk), .reset(reset), .en(pcen), .d(pcnext), .q(pc));
 
     // Address selection
     mux2 mux2_pc(.a(pc), .b(aluout), .sel(iord), .y(addr));
