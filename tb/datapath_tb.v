@@ -22,7 +22,6 @@ module datapath_test_design_tb;
     wire [7:0] addr;
     wire [7:0] wdata;
 
-    // Instantiate the datapath module
     datapath_test_design uut (
         .clk(clk),
         .reset(reset),
@@ -44,52 +43,45 @@ module datapath_test_design_tb;
         .wdata(wdata)
     );
 
-    reg [31:0] instr; // Instruction register
+    reg [31:0] instr;
 
-    // Initialize signals
+    always #5 clk = ~clk;
+
     initial begin
+        $monitor("time=%t | addr=%h | wdata=%h | zero=%b | op=%h | funct=%h", $time, addr, wdata, zero, op, funct);
+
         // Initialize inputs
         reset = 1;
         #10;
 
-        // Set control signals
         reset = 0;
         clk = 0;
         pcen = 1;
         iord = 0;
-        irwrite = 4'b1111; // Write all bits of instruction
+        irwrite = 4'b1111;
         regdst = 0;
         memtoreg = 0;
-        regwrite = 1; // Enable write to register file
+        regwrite = 1;
         alusrca = 0;
         alusrcb = 2'b00;
         alucont = 3'b000;
         pcsource = 2'b00;
-        memdata = 8'hAA; // Memory data value for instructions or data
+        memdata = 8'hAA;
 
-        // Initialize the instruction
-        instr = 32'b000000_00000_00001_00010_00000_100000; // Sample instruction (R-type)
+        // Initialize instruction
+        instr = 32'b000000_00000_00001_00010_00000_100000; // review
         
-        // Write to register before read
+        // Write to register
         #10;
-        regwrite = 1; // Ensure regwrite is enabled
-        instr = 32'b000000_00000_00001_00010_00000_100000; // Example instruction to write values
-        // Wait for the clock cycle to propagate
+        regwrite = 1;
+        instr = 32'b000000_00000_00001_00010_00000_100000; // review
         #10;
         
-        // Now you can read from the register file
-        regwrite = 0; // Disable writing to registers
-        // Set up other control signals as needed
-    end
+        // Read from register
+        regwrite = 0;
+        #50;
 
-    // Clock generation
-    always begin
-        #5 clk = ~clk;  // 100 MHz clock
-    end
-
-    // Monitor outputs for debugging
-    initial begin
-        $monitor("time=%t | addr=%h | wdata=%h | zero=%b | op=%h | funct=%h", $time, addr, wdata, zero, op, funct);
+        $finish;
     end
 
 endmodule

@@ -11,7 +11,6 @@ module alu_tb;
     wire [7:0] aluout;
     wire zero;
 
-    // Instantiate the ALU
     alu uut (
         .a(a),
         .b(b),
@@ -21,10 +20,7 @@ module alu_tb;
     );
 
     initial begin
-        // Display header
         $display("Time\talucont\ta\tb\taluout\tzero");
-
-        // Monitor outputs
         $monitor("%0t\t%b\t%h\t%h\t%h\t%b", $time, alucont, a, b, aluout, zero);
 
         // Test AND: alucont = 3'b000

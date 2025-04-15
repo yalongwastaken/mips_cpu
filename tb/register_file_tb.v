@@ -2,7 +2,6 @@
 
 module register_file_tb;
 
-    // Testbench signals
     reg clk;
     reg reset;
     reg regwrite;
@@ -10,7 +9,6 @@ module register_file_tb;
     reg [7:0] wd;
     wire [7:0] rd1, rd2;
 
-    // Instantiate the register file
     register_file uut (
         .clk(clk),
         .reset(reset),
@@ -23,10 +21,8 @@ module register_file_tb;
         .rd2(rd2)
     );
 
-    // Clock generation
     always #5 clk = ~clk;
 
-    // Stimulus
     initial begin
         // Reset
         reset = 1;
@@ -38,8 +34,6 @@ module register_file_tb;
         regwrite = 0;
         ra1 = 0; ra2 = 0; wa = 0;
         wd = 0;
-
-        // Wait a bit
         #10;
 
         // Write 0xAA to register 1
@@ -53,14 +47,13 @@ module register_file_tb;
         wd = 8'b01010101;
         #10;
 
-        // Try writing to register 0 (should not change)
+        // Attempt write to register 0
         wa = 5'd0;
         wd = 8'b11111111;
         #10;
 
-        regwrite = 0; // Disable writing
-
-        // Read from reg 1 and reg 2
+        // Read from register 1 and 2
+        regwrite = 0;
         ra1 = 5'd1;
         ra2 = 5'd2;
         #5;

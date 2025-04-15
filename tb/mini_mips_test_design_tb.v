@@ -2,15 +2,13 @@
 
 module mini_mips_testbench;
 
-    // Testbench signals
     reg clk;
     reg reset;
-    reg [7:0] memdata;  // Memory data for testing (one byte at a time)
+    reg [7:0] memdata;
     wire memwrite;
     wire [7:0] adr;
     wire [7:0] writedata;
 
-    // Instantiate the mini_mips module
     mini_mips_test_design uut (
         .clk(clk),
         .reset(reset),
@@ -20,13 +18,12 @@ module mini_mips_testbench;
         .writedata(writedata)
     );
 
-    // Clock generation
-    always begin
-        #5 clk = ~clk;  // Toggle the clock every 5 ns
-    end
+    always #5 clk = ~clk;
 
-    // Initial block for reset and stimulus
     initial begin
+        $monitor("Time: %t | memwrite: %b | adr: %h | writedata: %h | memdata: %b",
+                 $time, memwrite, adr, writedata, memdata);
+
         // Initialize signals
         clk = 0;
         reset = 0;
@@ -107,11 +104,6 @@ module mini_mips_testbench;
         #20;
 
         $finish;
-    end
-
-    initial begin
-        $monitor("Time: %t | memwrite: %b | adr: %h | writedata: %h | memdata: %b",
-                 $time, memwrite, adr, writedata, memdata);
     end
 
 endmodule

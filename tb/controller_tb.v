@@ -19,7 +19,6 @@ module controller_tb;
     wire regdst;
     wire [2:0] alucont;
 
-    // Instantiate controller
     controller dut (
         .clk(clk),
         .reset(reset),
@@ -39,15 +38,13 @@ module controller_tb;
         .alucont(alucont)
     );
 
-    // Clock generation
     always #5 clk = ~clk;
 
-    // Stimulus
     initial begin
         $display("Starting controller test...");
         clk = 0;
         reset = 1;
-        op = 6'b000000; // Default
+        op = 6'b000000;
         funct = 6'b000000;
         #10;
 
@@ -55,14 +52,14 @@ module controller_tb;
 
         // Test LB
         op = 6'b100000; // LB opcode
-        #50; // Enough cycles to go FETCH1 → FETCH4 → DECODE → MEMADR → LBRD → LBWR
+        #50;
 
         // Test SB
         op = 6'b101000; // SB opcode
         #50;
 
-        // Test R-Type (e.g., add)
-        op = 6'b000000; funct = 6'b100000; // R-type + add
+        // Test R-Type
+        op = 6'b000000; funct = 6'b100000;
         #40;
 
         // Test BEQ
