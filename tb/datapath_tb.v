@@ -42,6 +42,8 @@ module datapath_test_design_tb;
         .wdata(wdata)
     );
 
+    reg [31:0] instr; // Instruction register
+
     // Initialize signals
     initial begin
         clk = 0;
