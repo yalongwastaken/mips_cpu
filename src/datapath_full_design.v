@@ -55,7 +55,12 @@ module datapath_full_design(
     flop memdata_flop(.clk(clk), .d(memdata), .q(data));
 
     // MUXes for register file inputs
-    mux2 #(.DATA_WIDTH(5)) mux2_a3(.a(instr[20:16]), .b(instr[15:11]), .sel(regdst), .y(wa));
+    mux2 #(.DATA_WIDTH(5)) mux2_a3(
+        .a(instr[20:16]), 
+        .b(instr[15:11]), 
+        .sel(regdst), 
+        .y(wa)
+    );
     mux2 mux2_w3(.a(aluout), .b(data), .sel(memtoreg), .y(wd));
 
     // Register File
@@ -76,7 +81,14 @@ module datapath_full_design(
 
     // ALU operand muxes
     mux2 mux2_a(.a(pc), .b(a), .sel(alusrca), .y(aluin1));
-    mux4 mux4_b(.a(wdata), .b(8'b00000001), .c(imm), .d(immx4[7:0]), .sel(alusrcb), .y(aluin2));
+    mux4 mux4_b(
+        .a(wdata), 
+        .b(8'b00000001), 
+        .c(imm), 
+        .d(immx4[7:0]), 
+        .sel(alusrcb), 
+        .y(aluin2)
+    );
 
     // ALU
     alu alu(.alucont(alucont), .a(aluin1), .b(aluin2), .aluout(aluout), .zero(zero));
