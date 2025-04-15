@@ -9,11 +9,11 @@ module mem(
     output reg [7:0] data_out  // Data to read
 );
     reg [7:0] memory [255:0];  // 256 x 8-bit memory
+    integer i;
 
     // Synchronous read and write
     always @(posedge clk or posedge reset) begin
         if (reset) begin
-            integer i;
             // Initialize memory
             for (i = 0; i < 256; i = i + 1) begin
                 memory[i] <= 8'b0;
