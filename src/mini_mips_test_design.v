@@ -15,6 +15,7 @@ module mini_mips_test_design(
 
     datapath_test_design dp (
         .clk(clk),
+        .reset(reset),
         .pcen((zero & branch) | pcwrite),
         .iord(iord),
         .irwrite(irwrite),

@@ -2,6 +2,7 @@
 
 module datapath_test_design(
     input wire clk,
+    input wire reset,
     input wire pcen,
     input wire iord,
     input wire [3:0] irwrite,
@@ -57,6 +58,7 @@ module datapath_test_design(
     // Register File
     register_file regfile(
         .clk(clk),
+        .reset(reset),
         .regwrite(regwrite),
         .ra1(instr[25:21]),
         .ra2(instr[20:16]),

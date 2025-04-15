@@ -2,6 +2,7 @@
 
 module datapath_full_design(
     input wire clk,
+    input wire reset,
     input wire pcen,
     input wire iord,
     input wire memwrite,
@@ -37,6 +38,7 @@ module datapath_full_design(
     // Instruction/Data memory
     mem instr_data_mem(
         .clk(clk),
+        .reset(reset),
         .memwrite(memwrite),
         .addr(addr),
         .data_in(wdata),
@@ -66,6 +68,7 @@ module datapath_full_design(
     // Register File
     register_file regfile(
         .clk(clk),
+        .reset(reset),
         .regwrite(regwrite),
         .ra1(instr[25:21]),
         .ra2(instr[20:16]),

@@ -14,6 +14,7 @@ module mini_mips_full_design(
 
     datapath_full_design dp (
         .clk(clk),
+        .reset(reset),
         .pcen((zero & branch) | pcwrite),
         .iord(iord),
         .memwrite(memwrite),

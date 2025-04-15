@@ -2,6 +2,7 @@ module datapath_test_design_tb;
 
     // Inputs
     reg clk;
+    reg reset;
     reg pcen;
     reg iord;
     reg [3:0] irwrite;
@@ -24,6 +25,7 @@ module datapath_test_design_tb;
     // Instantiate the datapath module
     datapath_test_design uut (
         .clk(clk),
+        .reset(reset),
         .pcen(pcen),
         .iord(iord),
         .irwrite(irwrite),
@@ -46,6 +48,12 @@ module datapath_test_design_tb;
 
     // Initialize signals
     initial begin
+        // Initialize inputs
+        reset = 1;
+        #10;
+
+        // Set control signals
+        reset = 0;
         clk = 0;
         pcen = 1;
         iord = 0;

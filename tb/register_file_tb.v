@@ -4,6 +4,7 @@ module register_file_tb;
 
     // Testbench signals
     reg clk;
+    reg reset;
     reg regwrite;
     reg [4:0] ra1, ra2, wa;
     reg [7:0] wd;
@@ -12,6 +13,7 @@ module register_file_tb;
     // Instantiate the register file
     register_file uut (
         .clk(clk),
+        .reset(reset),
         .regwrite(regwrite),
         .ra1(ra1),
         .ra2(ra2),
@@ -26,7 +28,12 @@ module register_file_tb;
 
     // Stimulus
     initial begin
+        // Reset
+        reset = 1;
+        #10;
+
         // Initialize
+        reset = 0;
         clk = 0;
         regwrite = 0;
         ra1 = 0; ra2 = 0; wa = 0;
