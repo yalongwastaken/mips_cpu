@@ -30,7 +30,7 @@ module datapath_full_design(
     wire [7:0] immx4 = {instr[5:0], 2'b00};
 
     // PC Register
-    flop_en pc_flop(.clk(clk), .en(pcen), .d(pcnext), .q(pc));
+    flop_en pc_flop(.clk(clk), .reset(reset) .en(pcen), .d(pcnext), .q(pc));
 
     // Address selection
     mux2 mux2_pc(.a(pc), .b(aluout), .sel(iord), .y(addr));
@@ -54,7 +54,7 @@ module datapath_full_design(
     end
 
     // Data register from memory
-    flop memdata_flop(.clk(clk), .d(memdata), .q(data));
+    flop memdata_flop(.clk(clk), .reset(reset), .d(memdata), .q(data));
 
     // MUXes for register file inputs
     mux2 #(.DATA_WIDTH(5)) mux2_a3(
@@ -79,8 +79,8 @@ module datapath_full_design(
     );
 
     // Register read flops
-    flop rdata1_flop(.clk(clk), .d(rd1), .q(a));
-    flop rdata2_flop(.clk(clk), .d(rd2), .q(wdata));
+    flop rdata1_flop(.clk(clk), .reset(reset), .d(rd1), .q(a));
+    flop rdata2_flop(.clk(clk), .reset(reset), .d(rd2), .q(wdata));
 
     // ALU operand muxes
     mux2 mux2_a(.a(pc), .b(a), .sel(alusrca), .y(aluin1));
@@ -97,7 +97,7 @@ module datapath_full_design(
     alu alu(.alucont(alucont), .a(aluin1), .b(aluin2), .aluout(aluout), .zero(zero));
 
     // ALUOUT flop
-    flop aluout_flopp(.clk(clk), .d(aluout), .q(aluout_flop));
+    flop aluout_flopp(.clk(clk), .reset(reset), .d(aluout), .q(aluout_flop));
 
     // Next PC selection
     mux3 mux3_pc(.a(aluout), .b(aluout_flop), .c(immx4), .sel(pcsource), .y(pcnext));
