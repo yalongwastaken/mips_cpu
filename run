@@ -8,6 +8,7 @@ xmverilog -compile ../tb/*.v
 xmverilog -compile ../atpg/tb/*.v
 xmverilog -compile ../atpg/src/*.v
 
+#TODO: Update this to allow for testing of ATPG testbenches
 xmverilog +gui +access+r -timescale 1ns/1ps ../tb/$1.v
 
 popd
