@@ -5,4 +5,9 @@ pushd work
 xmverilog -compile ../src/*.v
 xmverilog -compile ../tb/*.v
 
+xmverilog -compile ../atpg/tb/*.v
+xmverilog -compile ../atpg/src/*.v
+
+xmverilog -compile ../utils/*.v
+
 popd

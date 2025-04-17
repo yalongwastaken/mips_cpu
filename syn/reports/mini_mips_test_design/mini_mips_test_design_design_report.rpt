@@ -3,7 +3,7 @@
 Report : design
 Design : mini_mips_test_design
 Version: O-2018.06-SP1
-Date   : Tue Apr 15 13:25:52 2025
+Date   : Wed Apr 16 20:59:48 2025
 ****************************************
 
 Design allows ideal nets on clock nets.
